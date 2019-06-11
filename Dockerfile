@@ -1,4 +1,4 @@
-FROM tmt-web-base as builder
+FROM opentmt/tmt-web-base as builder
 RUN mkdir /opt/app -p
 WORKDIR /opt/app
 
