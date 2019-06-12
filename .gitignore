@@ -23,4 +23,3 @@ nvm
 *.sln
 *.sw*
 package-lock.json
-src/config/index.js
