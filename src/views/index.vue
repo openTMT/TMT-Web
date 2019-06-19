@@ -5,7 +5,8 @@
       <Header
         :style="{background: '#fff',marginBottom: '10px',padding:0,height:'59px', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)',position: 'fixed', width: '100%',zIndex:999}">
         <Menu mode="horizontal" theme="light" :active-name="active_menuitem">
-          <div class="layout-logo"><img src="@/assets/img/logo.png" width="60"/><span class="layout-logo-text">移动端缺陷提交提效方案</span></div>
+          <div class="layout-logo"><img src="@/assets/img/logo.png" width="60"/><span class="layout-logo-text">移动端缺陷提交提效方案</span>
+          </div>
           <div class="layout-nav">
 
             <MenuItem name="tmt" :to="{ name: 'tmt'}">
@@ -36,7 +37,8 @@
       </Header>
       <router-view></router-view>
 
-      <Footer class="layout-footer-center" :style="{padding: '5px',textAlign: 'center'}">2019 &copy;  <a href="https://github.com/openTMT">openTMT</a>
+      <Footer class="layout-footer-center" :style="{padding: '5px',textAlign: 'center'}">2019 &copy; <a
+        href="https://github.com/openTMT">openTMT</a>
       </Footer>
     </Layout>
   </div>
@@ -46,6 +48,7 @@
   import {mapState, mapGetters, mapActions} from 'vuex'
   import Vue from 'vue'
   import VueQrcode from '@xkeshi/vue-qrcode';
+  import {baseURL_TMT} from '@/config'
 
   Vue.component(VueQrcode.name, VueQrcode);
 
@@ -87,6 +90,7 @@
         return {
           "username": this.userinfo().username,
           "realname": encodeURIComponent(this.userinfo().realname),
+          "domain": baseURL_TMT.split('//')[1],
         }
       }
     }
@@ -134,7 +138,7 @@
     left: 30px;
   }
 
-  .layout-logo-text{
+  .layout-logo-text {
     position: relative;
     top: -20px;
     left: 10px;
